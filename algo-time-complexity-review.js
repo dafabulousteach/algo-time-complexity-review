@@ -1,8 +1,8 @@
 /////////// Prompt 1 ///////////
-/////////// time complexity: 
+/////////// time complexity: Linear
 function findMax(array){
-  var max = -Infinity;
-  for (var i = 0; i < array.length; i++){
+  var max = -Infinity; // the length of the array determines the problem size
+  for (var i = 0; i < array.length; i++){ // this points to a linear time complexity
     if (array[i] > max){
       max = array[i];
     }
@@ -12,36 +12,36 @@ function findMax(array){
 
 
 /////////// Prompt 2 ///////////
-/////////// time complexity: 
+/////////// time complexity: Linear
 function contains(array, target){
-  return array.indexOf(target) > -1;
+  return array.indexOf(target) > -1; // the length of the array determines the problem size
 }
 
 
 /////////// Prompt 3 ///////////
-/////////// time complexity: 
+/////////// time complexity: Linear
 function partialContains(array, target, start){
-  return array.slice(start).indexOf(target) > -1;
+  return array.slice(start).indexOf(target) > -1; // the length of the array determines the problem size
 }
 
 
 /////////// Prompt 4 ///////////
-/////////// time complexity: 
+/////////// time complexity: Constant
 function square(array){
-  for (var i = 0; i < 3; i++){
+  for (var i = 0; i < 3; i++){ // The loop only needs to be done 3 times, even if the array is 100
     array[i] = array[i] * array[i];
   }
   return array;
 }
 
 /////////// Prompt 5 ///////////
-/////////// time complexity: 
+/////////// time complexity: Linear
 function repeat(array){
   var repeat = [];
-  for (var j = 0; j < 10; j++){
-    repeat[j] = [];
-    for (var i = 0; i < array.length; i++){
-      repeat[j].push(array[i]);
+  for (var j = 0; j < 10; j++){ // 10 loops; this makes happen only 10 times.
+    repeat[j] = []; // Do this 1 time
+    for (var i = 0; i < array.length; i++){ // n
+      repeat[j].push(array[i]); // 1
     }
   }
   return repeat; 
@@ -50,14 +50,14 @@ function repeat(array){
 
 
 /////////// Prompt 6 ///////////
-/////////// time complexity: 
+/////////// time complexity: Linear
 function gcf(num1, num2){
   if (num1 > num2){ //this ensures num1 is the smaller number
     var temp = num1;
     num1 = num2;
     num2 = temp;
   }
-  for (var i = num1; i > 1; i--){
+  for (var i = num1; i > 1; i--){ // we're only iterating over num1 <-- this is our problem size
     if (num1 % i === 0 && num2 % i === 0){
       return i;
     }
@@ -67,14 +67,14 @@ function gcf(num1, num2){
 
 
 /////////// Prompt 7 ///////////
-/////////// time complexity: 
+/////////// time complexity: Quadratic
 function countChar(string){
   var counts = {};
   var currChar, currCharCount;
-  for (var i = 0; i < string.length; i++){
+  for (var i = 0; i < string.length; i++){ // this is n
     currChar = string[i];
     currCharCount = 1;
-    for (var j = i+1; j < string.length; j++){
+    for (var j = i+1; j < string.length; j++){ // this is repeated n-(i+1)
       if (currChar === string[j]){
         currCharCount++;
       }
@@ -102,7 +102,7 @@ var factorial = function(num){
 
 
 /////////// Prompt 9 ///////////
-/////////// time complexity: 
+/////////// time complexity: Constant, there is always three plays and always 5 minutes
 function tournament(players){
   var results;
   if (players.length < 3){
@@ -120,7 +120,7 @@ function tournament(players){
 
 
 /////////// Prompt 10 ///////////
-/////////// time complexity: 
+/////////// time complexity: logrithmic with base 4 cuz you're dividing by 4 every time
 function tournamentRedux(players){
   var results;
   if (players.length < 3){
@@ -139,7 +139,7 @@ function tournamentRedux(players){
 
 
 /////////// Prompt 11 ///////////
-/////////// time complexity: 
+/////////// time complexity: Exponential
 function allPasswords(allowedChars, maxLength){
   var results = [];
 
@@ -160,7 +160,7 @@ function allPasswords(allowedChars, maxLength){
 
 
 /////////// Prompt 12 ///////////
-/////////// time complexity: 
+/////////// time complexity: Constant
 function findColor(quadTree, coordinates){
   //a quad tree is a tree where each node has 4 children 
   //or no children, usually used to divide a two-dimensional
